@@ -10,8 +10,11 @@
 	<script type="text/javascript">
 	
 		$(document).ready(function() {
-		    $('#main').addClass("ui-state-active");
+		    $('#header').addClass("ui-state-active");
+		    $('#header').addClass("ui-corner-all");
+		    $('#main').addClass("ui-state-default");
 		    $('#main').addClass("ui-corner-all");
+		    $('#main').accordion();
 
 		});
 
@@ -32,29 +35,39 @@
 	</script>
 </head>
 <body>
+	<div id="header">
+		<h1> Robodad </h1>
+		<h3> Remote Child Terrorizer </h3>
+	</div>
 	<div id="main">
-		<table>
-			<thead>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<input type="button" id="buzzer" value="Sound Buzzer" onclick="doIt('buzzer');"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="button" id="gotobed" value="Go To Bed" onclick="doIt('gotobed');" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="button" id="liedown" value="Lie Down" onclick="doIt('liedown');"/>
-					</td>
-				</tr>
-			
-			</tbody>
-		</table>
+		<h2> Manual </h2>
+		<div>
+			<table>
+				<thead>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<input type="button" id="buzzer" value="Sound Buzzer" onclick="doIt('buzzer');"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="button" id="gotobed" value="Go To Bed" onclick="doIt('gotobed');" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="button" id="liedown" value="Lie Down" onclick="doIt('liedown');"/>
+						</td>
+					</tr>
+				
+				</tbody>
+			</table>
+		</div>
+		<h2> Automatic Operations </h2>
+		<div>
+		</div>
 	</div>
 </body>
 
