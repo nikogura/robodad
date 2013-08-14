@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+
+use strict;
+use feature qw(:5.10);
+
+use CGI;
+use HTML::Template;
+
+my $tmplDir = "/project/robodad/templates";
+my $soundDir = "/project/robodad/sounds";
+my $q = CGI->new;
+
+if ($q->param()) {
+	my $sound = $q->param('sound');
+
+	system "mpg123 $soundDir/$sound.mp3";
+
+}
+
+startScreen();
+
+#--------------------------------------------------
+sub startScreen {
+	print $q->header;
+
+	my $tmplFile = "$tmplDir/home.tmpl";
+
+	my $t = HTML::Template->new(
+				filename 		=> $tmplFile,
+				die_on_bad_params	=> 0,
+			);
+
+	my $tmplvars = {};
+
+	$t->param($tmplvars);
+
+	print $t->output;
+
+}

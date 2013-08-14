@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title> Robodad ArgusEye </title>
+    	<link rel="stylesheet" href="css/$theme$/jquery-ui.min.css"/>
+    	<link rel="stylesheet" href="css/$theme$/jquery.ui.theme.css"/>
+    	<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+    	<script type="text/javascript" src="js/jquery-ui-1.10.2.min.js"></script>
+	
+
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+		    $('#main').addClass("ui-state-active");
+		    $('#main').addClass("ui-corner-all");
+
+		});
+
+		function doIt(sound) {
+			alert("doing "+ sound);
+
+
+		}
+
+	</script>
+</head>
+<body>
+	<div id="main">
+		<table>
+			<thead>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Sound Buzzer
+					</td>
+					<td>
+						<input type="button" id="buzzer" onclick="doIt('buzzer');"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Go To Bed
+					</td>
+					<td>
+						<input type="button" id="gotobed" onclick="doIt('gotobed');" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Sound Buzzer
+					</td>
+					<td>
+						<input type="button" id="liedown" onclick="doIt('liedown');"/>
+					</td>
+				</tr>
+			
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>
