@@ -16,8 +16,16 @@
 		});
 
 		function doIt(sound) {
-			alert("doing "+ sound);
+			$.ajax({
+				type: "GET",
+				url: "/cgi-bin/arguseye",
+				data: "sound="+sound,
+				success: function(response) {
+				},
+				error: function(e) {
 
+				}
+			});
 
 		}
 
@@ -47,7 +55,7 @@
 				</tr>
 				<tr>
 					<td>
-						Sound Buzzer
+						Lie Down
 					</td>
 					<td>
 						<input type="button" id="liedown" onclick="doIt('liedown');"/>
