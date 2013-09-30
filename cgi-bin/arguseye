@@ -23,7 +23,7 @@ if ($q->param('sound')) {
 
 		system "touch $armed";
 	} else {
-		unlink $armMotionDetection;
+		unlink $armed;
 	}
 
 } else {
