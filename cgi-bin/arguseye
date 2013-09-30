@@ -9,15 +9,31 @@ use HTML::Template;
 my $tmplDir = "/project/robodad/templates";
 my $soundDir = "/project/robodad/sounds";
 my $q = CGI->new;
+my $armMotionDetection = "/project/robodad/var/armed";
 
-if ($q->param()) {
+if ($q->param() && $q->param('sound')) {
+
 	my $sound = $q->param('sound');
 
 	system "mpg123 $soundDir/$sound.mp3";
+	startScreen();
+
+} elsif ($q->param() && $q->param('armed')) {
+
+	if ($q->param('armed') eq 1) {
+
+		system "touch $armMotionDetection";
+	} else {
+		unlink $armMotionDetection;
+	}
+
+	startScreen();
+
+} else {
+	startScreen();
 
 }
 
-startScreen();
 
 #--------------------------------------------------
 sub startScreen {

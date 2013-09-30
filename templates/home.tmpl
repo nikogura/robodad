@@ -32,6 +32,28 @@
 
 		}
 
+		function armMotionDetection() {
+			var value;
+
+			if ($("#motion").is(':checked')) {
+				value = 1;
+			} else {
+				value = 0;
+			}
+
+			$.ajax({
+				type: "GET",
+				url: "/cgi-bin/arguseye",
+				data: "armed="+value,
+				success: function(response) {
+				},
+				error: function(e) {
+
+				}
+			});
+
+		}
+
 	</script>
 </head>
 <body>
@@ -101,7 +123,7 @@
 							Enable Motion Detection
 						</td>
 						<td>
-							<input type="checkbox" id="motion">
+							<input type="checkbox" id="motion" onchange="armMotionDetection();">
 						</td>
 					</tr>
 				</tbody>
