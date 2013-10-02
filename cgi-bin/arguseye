@@ -16,6 +16,7 @@ if ($q->param('sound')) {
 	my $sound = $q->param('sound');
 
 	system "mpg123 $soundDir/$sound.mp3";
+	print $q->header;
 
 } elsif ($q->param('armed')) {
 
@@ -25,6 +26,7 @@ if ($q->param('sound')) {
 	} else {
 		unlink $armed;
 	}
+	print $q->header;
 
 } else {
 	startScreen();
