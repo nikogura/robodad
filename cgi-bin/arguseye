@@ -47,7 +47,7 @@ sub startScreen {
 
 	my $tmplvars = {};
 
-	if (-f $armed) {
+	if (-e $armed) {
 		$tmplvars->{armed} = 1;
 
 	}

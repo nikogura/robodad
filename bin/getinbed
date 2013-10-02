@@ -4,6 +4,6 @@ use strict;
 
 my $armed = "/project/robodad/var/armed";
 
-if (-f $armed) {
+if (-e $armed) {
 	system "/usr/bin/mpg123 /project/robodad/sounds/getinbed.mp3";
 }
